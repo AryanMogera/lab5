@@ -1,0 +1,245 @@
+<!--
+=========================================================
+Name        : lab5_exe_C.html
+Assignment  : Lab 5, Exercise C
+Author(s)   : Aryan Mogera, Sheharyar 
+Submission  : Febrauary 14, 2024
+Description : DOM Elements.
+=========================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Responsive HTML Example</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh; /* Ensures the body takes up at least the viewport height */
+			}
+			header,
+			footer {
+				background-color: #333;
+				color: white;
+				text-align: center;
+				padding: 1em 0;
+			}
+			.container {
+				width: 90%;
+				max-width: 1200px;
+				margin: auto;
+				flex-grow: 1; /* Allows the container to expand and fill the available space */
+			}
+			nav {
+				background-color: coral;
+				padding: 1px 10px;
+			}
+			nav a {
+				text-decoration: none;
+			}
+			nav ul {
+				list-style-type: none;
+				padding: 0;
+				display: flex; /* Apply flexbox to nav */
+				flex-wrap: wrap; /* Allows nav items to wrap on smaller screens */
+			}
+			nav ul li {
+				margin-right: 20px;
+				position: relative; /* Needed for absolute positioning of dropdowns */
+			}
+			nav ul li ul {
+				display: none;
+				position: absolute;
+				left: 0;
+				background-color: #fbce9d; /* Background for dropdown */
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: for dropdown shadow */
+				z-index: 1000; /* Ensures dropdown is above other content */
+			}
+			nav ul li:hover ul {
+				display: block;
+			}
+			nav ul li ul li {
+				padding: 10px 10px;
+				white-space: nowrap;
+			}
+			@media (max-width: 600px) {
+				nav ul li {
+					display: block;
+					margin-right: 0;
+					width: 100%; /* Full width for mobile */
+				}
+				nav ul {
+					flex-direction: column; /* Stack nav items vertically on mobile */
+				}
+			}
+			.companyName {
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to <span class="companyName">&nbsp;</span> Website</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li>
+					<a href="#">Services</a>
+					<ul>
+						<li><a href="#">Web Design</a></li>
+						<li><a href="#">Hosting</a></li>
+					</ul>
+				</li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="container">
+			<section>
+				<h2>About Us</h2>
+				<p>This is a paragraph about our company.</p>
+				<img src="./images/logo.svg" alt="Company logo" width="100px" />
+                
+				<h3>Our Journey</h3>
+				<p>
+					Welcome to our <span class="companyName">&nbsp;</span>, a place where
+					innovation meets excellence. Our story began in the year 2010, in the
+					heart of Calgary, with a small team of passionate individuals
+					dedicated to making a difference in the software. Over the years,
+					we've grown into a family of creative thinkers, problem solvers, and
+					technology enthusiasts committed to delivering outstanding solutions.
+				</p>
+				<h3>Our Mission</h3>
+				<p>
+					At our <span class="companyName">&nbsp;</span>, our mission is to
+					empower businesses and individuals through cutting-edge technology and
+					bespoke services. We believe in pushing boundaries, challenging the
+					status quo, and constantly innovating to stay ahead of the curve. Our
+					goal is to create products and services that not only meet but exceed
+					the expectations of our clients and contribute positively to our
+					community.
+				</p>
+				<h3>Our Team</h3>
+				<p>
+					Our strength lies in our diverse team of experts who bring a wealth of
+					knowledge, experience, and creativity to the table. From seasoned
+					industry veterans to dynamic young talent, our team is a melting pot
+					of ideas and perspectives that drive our success. We are proud to have
+					a culture that fosters learning, growth, and collaboration.
+				</p>
+				<h3>Our Services</h3>
+				<p>
+					We specialize in a wide range of services including full stack
+					development. Each service is tailored to meet the unique needs of our
+					clients, ensuring maximum effectiveness and efficiency. Whether it's
+					through web design or hosting, we strive to deliver excellence at
+					every step.
+				</p>
+				<h3>Our Commitment</h3>
+				<p>
+					Customer satisfaction is at the core of everything we do. We are
+					dedicated to building strong, lasting relationships with our clients
+					based on trust, integrity, and mutual respect. Our commitment to
+					quality and excellence is unwavering, and we continuously seek
+					feedback to improve and evolve.
+				</p>
+				<h3>Join Our Journey</h3>
+				<p>
+					As we look to the future, we are excited about the endless
+					possibilities and new challenges that lie ahead. We invite you to join
+					us on this journey of growth and innovation. Together, let's shape a
+					brighter, more technologically advanced future.
+				</p>
+			</section>
+			<section>
+				<h2>Contact Us</h2>
+				<form>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" /><br />
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" /><br />
+					<label for="message">Message:</label>
+					<textarea id="message" name="message"></textarea><br />
+					<input type="button" value="Submit" />
+				</form>
+			</section>
+			<article>
+				<h2>What is full-stack?</h2>
+				<p>
+					Full-stack development stands at the cutting edge of modern web and
+					software development, embodying a comprehensive approach to building
+					applications. A full-stack developer is akin to a versatile artisan,
+					skilled in both front-end and back-end technologies. They navigate
+					with ease through the layers of a technology stack, from crafting
+					engaging and intuitive user interfaces to engineering robust and
+					efficient server-side logic. With expertise in a range of languages
+					and frameworks — from HTML, CSS, and JavaScript for the front end, to
+					Node.js, Python, or Ruby for the back end — full-stack developers
+					offer a unique blend of cross-disciplinary skills. This holistic
+					understanding of both client and server sides allows them to see the
+					bigger picture, seamlessly integrate various components of an
+					application, and ensure a cohesive, functional, and user-friendly
+					experience. In an era where technology is rapidly evolving, full-stack
+					developers are the agile architects of the web, capable of building
+					dynamic and responsive websites, applications, and systems that drive
+					modern digital experiences.
+				</p>				
+			</article>
+            <aside>
+                <h3>Related Links</h3>
+                <ul>
+                    <li><a href="#">W3School</a></li>
+                    <li><a href="#">AWS</a></li>
+                </ul>
+            </aside>
+		</div>
+		<footer>
+			<p>Copyright © 2024</p>
+		</footer>
+		<script>
+			document.addEventListener('DOMContentLoaded', function afterRender() {
+				// Task 1: Set the text content of all elements with the class 'companyName' and remove their border
+				const changeTextAndRemoveBorder = () => {
+        	document.querySelectorAll('.companyName').forEach(element => {element.textContent = "Aryan";{element.style.border = "none";}});
+    				};
+    			changeTextAndRemoveBorder();
+
+				// Task 2: Change the background color of the navigation bar
+				const changeNavColor = () => {
+					document.querySelector('nav').style.backgroundColor = "rgb(0, 191, 180)";
+				};
+				changeNavColor();
+				
+				// Task 3: Hide the section titled 'What is full-stack?'
+				
+
+				// Task 4: Create a new <p> element and append it to the 'About Us' section
+
+
+				// Task 5: Add placeholders to input elements based on their corresponding label IDs
+
+
+				// Task 6: Set the src attribute of the image
+
+
+				// Task 7: Add a new item in the navigation menu
+
+
+				// Task 8: Change the submit button text upon clicking and make it disabled
+
+
+				// Task 9: Change the text color of each item in the 'Related Links' to green
+
+
+				// Task 10: Add a red solid border to the footer
+			});
+		</script>
+	</body>
+</html>
