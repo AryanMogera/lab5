@@ -54,19 +54,25 @@ const showResult2D = (title, containerId, dataArray) => {
     let container = document.getElementById(containerId);
     container.innerHTML = '';
     let table = document.createElement('table');
-    dataArray.forEach(row => {
+    dataArray.forEach(row => 
+        {
         let tr = document.createElement('tr');
-        row.forEach(val => {
+
+        row.forEach(val => 
+            
+            {
             let td = document.createElement('td');
             td.textContent = val;
             tr.appendChild(td);
         });
         table.appendChild(tr);
     });
+
     let caption = table.createCaption();
     caption.textContent = title;
     container.appendChild(table);
 };
+
 
 function performOperation(operation) {
     let matrix1 = getMatrixData2D('matrix1');
@@ -149,11 +155,15 @@ const getMatrixData2D = function (matrixId) {
 
 // Add two matrices
 
-function addMatrices(matrix1, matrix2) {
-    if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) { // Check if the matrices are of the same size
+function addMatrices(matrix1, matrix2) 
+{
+    if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) 
+
+    { // Check if the matrices are of the same size
         console.log("Matrices are not of the same size. Cannot perform addition.");
         return;
     }
+
     let result = matrix1.map((row, i) => 
         row.map((val, j) => val + matrix2[i][j])
     );
@@ -161,7 +171,8 @@ function addMatrices(matrix1, matrix2) {
 }
 // Subtract two matrices 
 
-const subtractMatrices = function (matrix1, matrix2) {
+const subtractMatrices = function (matrix1, matrix2) 
+{
     if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
         console.log("Matrices are not of the same size. Cannot perform subtraction.");
         return;
@@ -169,12 +180,14 @@ const subtractMatrices = function (matrix1, matrix2) {
     let result = matrix1.map((row, i) => 
         row.map((val, j) => val - matrix2[i][j])
     );
+
     return result;
 };
 
 // Multiply two matrices
 
-const multiplyMatrices = (matrix1, matrix2) => {
+const multiplyMatrices = (matrix1, matrix2) => 
+{
     if (matrix1[0].length !== matrix2.length) {
         console.log("The number of columns in the first matrix must equal the number of rows in the second matrix M x N. Cannot perform multiplication.");
         return;
