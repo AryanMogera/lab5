@@ -51,9 +51,22 @@ const showResult = (title, containerId, rows, cols, dataArray) => {
 };
 
 const showResult2D = (title, containerId, dataArray) => {
-	// dataArray is a 2D array
-	// complete this function based on the showResult function
-}
+    let container = document.getElementById(containerId);
+    container.innerHTML = '';
+    let table = document.createElement('table');
+    dataArray.forEach(row => {
+        let tr = document.createElement('tr');
+        row.forEach(val => {
+            let td = document.createElement('td');
+            td.textContent = val;
+            tr.appendChild(td);
+        });
+        table.appendChild(tr);
+    });
+    let caption = table.createCaption();
+    caption.textContent = title;
+    container.appendChild(table);
+};
 
 function performOperation(operation) {
     let matrix1 = getMatrixData2D('matrix1');
@@ -66,8 +79,36 @@ function performOperation(operation) {
     // Call your matrix calculation functions here
     // For example: if (operation === 'add') { addMatrices(matrix1, matrix2); }
 	// prints suitable messages for impossible situation
-    showResult('The Result', 'matrix3', 2, 4, result); // use suitable function for printing results
+
+    // Call the showResult function to display the result
+
+    switch (operation) {
+        case 'add': // Add the two matrices
+            result = addMatrices(matrix1, matrix2);
+            break;
+        case 'subtract': // Subtract the two matrices
+            result = subtractMatrices(matrix1, matrix2);
+            break;
+        case 'multiply':// Multiply the two matrices
+            result = multiplyMatrices(matrix1, matrix2);
+            break;
+        default:
+            console.log("Invalid operation"); // Print an error message
+
+            return; // Exit the function if the operation is not recognized
+    }
+
+    // Check if the operation was successful (i.e., the result is not undefined)
+    if (result) {
+        // Use the showResult2D function to display the result
+        showResult2D('The Result', 'matrix3', result);
+    } else {
+        // If the operation was not possible (e.g., due to incompatible matrix sizes), the result will be undefined
+        console.log("Operation was not possible.");
+    } // use suitable function for printing results
 }
+
+// Get the data from the matrix inputs and return a 1D array
 
 const getMatrixData1D = function (matrixId) {
     let matrixData = [];
@@ -77,6 +118,8 @@ const getMatrixData1D = function (matrixId) {
     });
     return matrixData;
 };
+
+// Get the data from the matrix inputs and return a 2D array
 
 const getMatrixData2D = function (matrixId) {
     let matrixData = [];
@@ -103,12 +146,46 @@ const getMatrixData2D = function (matrixId) {
 
 // Add your matrix calculation functions here
 // The functions must check the posibility of calculation too.
-function addMatrices(matrix1, matrix2){ 
-	// provide the code
+
+// Add two matrices
+
+function addMatrices(matrix1, matrix2) {
+    if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) { // Check if the matrices are of the same size
+        console.log("Matrices are not of the same size. Cannot perform addition.");
+        return;
+    }
+    let result = matrix1.map((row, i) => 
+        row.map((val, j) => val + matrix2[i][j])
+    );
+    return result;
 }
-const subtractMatrices = function (matrix1, matrix2) { 
-	// provide the code
+// Subtract two matrices 
+
+const subtractMatrices = function (matrix1, matrix2) {
+    if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
+        console.log("Matrices are not of the same size. Cannot perform subtraction.");
+        return;
+    }
+    let result = matrix1.map((row, i) => 
+        row.map((val, j) => val - matrix2[i][j])
+    );
+    return result;
 };
-const multiplyMatrices = (matrix1, matrix2) => { 
-	// provide the code
+
+// Multiply two matrices
+
+const multiplyMatrices = (matrix1, matrix2) => {
+    if (matrix1[0].length !== matrix2.length) {
+        console.log("The number of columns in the first matrix must equal the number of rows in the second matrix M x N. Cannot perform multiplication.");
+        return;
+    }
+    let result = new Array(matrix1.length).fill(0).map(() => new Array(matrix2[0].length).fill(0)); // Initialize the result matrix with zeros
+    for (let i = 0; i < matrix1.length; i++) {
+        for (let j = 0; j < matrix2[0].length; j++) { // Iterate over the rows of the first matrix and the columns of the second matrix
+            for (let k = 0; k < matrix1[0].length; k++) {
+                result[i][j] += matrix1[i][k] * matrix2[k][j]; 
+            }
+        }
+    }
+    return result;
 };
