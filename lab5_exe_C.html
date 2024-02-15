@@ -218,27 +218,64 @@ Description : DOM Elements.
 				changeNavColor();
 				
 				// Task 3: Hide the section titled 'What is full-stack?'
+				const hideSection = () => {
+					document.querySelector('article').style.display = 'none';
+				};
+				hideSection();
 				
-
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
-
+					const newParagraph = document.createElement('p');
+					newParagraph.textContent = 'This is a new paragraph';
+					newParagraph.style.color = 'red'; 
+					document.querySelector('section').appendChild(newParagraph);
 
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
-
+				const addPlaceholders = () => {
+					const labels = document.querySelectorAll('label');
+					labels.forEach(label => {
+						const input = document.querySelector(`#${label.htmlFor}`);
+						input.placeholder = label.textContent;
+					});
+				};
+				addPlaceholders();
 
 				// Task 6: Set the src attribute of the image
-
+				const setImageSrc = () => {const image = document.querySelector('img');
+							image.setAttribute('src', './images/example.svg');
+					};
+					setImageSrc();
 
 				// Task 7: Add a new item in the navigation menu
-
-
+				const addNavItem = () => {
+					const nav = document.querySelector('nav ul');
+					const newItem = document.createElement('li');
+					newItem.innerHTML = '<a href="#">Blog</a>';
+					nav.appendChild(newItem);
+				};
+				addNavItem();
 				// Task 8: Change the submit button text upon clicking and make it disabled
-
-
+				const changeButtonText = () => {
+					const button = document.querySelector('input[type="button"]');
+					button.addEventListener('click', () => {
+						button.value = 'Submitted';
+						button.disabled = true;
+					});
+				};
+				changeButtonText();
 				// Task 9: Change the text color of each item in the 'Related Links' to green
-
-
+				const changeLinkColor = () => {
+					const links = document.querySelectorAll('aside ul li a');
+					links.forEach(link => {
+						link.style.color = 'green';
+					});
+				};
+				changeLinkColor();
 				// Task 10: Add a red solid border to the footer
+				const addFooterBorder = () => {
+					const footer = document.querySelector('footer');
+					footer.style.border = '2px solid red';
+				};
+				addFooterBorder();
 			});
 		</script>
 	</body>

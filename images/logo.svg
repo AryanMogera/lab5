@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="89.802055mm"
+   height="89.802048mm"
+   viewBox="0 0 89.802055 89.802048"
+   version="1.1"
+   id="svg1391"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1388" />
+  <g
+     id="layer1"
+     transform="translate(-60.098978,-103.59898)">
+    <g
+       transform="matrix(0.31006852,0,0,0.31006852,49.187666,92.687666)"
+       data-uid="o_fbgn7nicj_7"
+       id="g38">
+      <svg
+         version="1.1"
+         id="Calque_1"
+         x="0px"
+         y="0px"
+         viewBox="0 0 360 360"
+         enable-background="new 0 0 360 360"
+         width="360"
+         height="360"
+         data-uid="o_fbgn7nicj_8">
+        <g
+           data-uid="o_fbgn7nicj_9"
+           id="g35">
+          <path
+             class="st0"
+             d="m 85.33,140.31 3.36,98.79 108.69,-72.54 -3.36,-98.79 z m 11.32,83.83 -2.84,-79.85 92.24,-61.56 2.86,79.83 z"
+             fill="#ff0763"
+             data-uid="o_fbgn7nicj_10"
+             id="path21" />
+          <path
+             class="st0"
+             fill="#ff0763"
+             data-type="polygon"
+             d="m 289.73,211.18 -88.08,-38.23 -108.7,72.54 88.08,38.23 z"
+             data-uid="o_fbgn7nicj_11"
+             id="path23" />
+          <path
+             class="st0"
+             d="m 306.97,110.33 -11.5,23.03 c 5.83,14.4 9.03,30.14 9.03,46.64 0,68.77 -55.73,124.49 -124.49,124.49 -68.76,0 -124.5,-55.72 -124.5,-124.49 0,-68.77 55.72,-124.49 124.49,-124.49 29.82,0 57.16,10.47 78.59,27.94 l 23.39,-6.23 C 255.82,51.25 219.79,35.19 180,35.19 100.03,35.19 35.19,100.02 35.19,180 c 0,79.98 64.84,144.81 144.81,144.81 79.97,0 144.81,-64.84 144.81,-144.81 0,-25.27 -6.48,-48.99 -17.84,-69.67 z"
+             fill="#ff0763"
+             data-uid="o_fbgn7nicj_12"
+             id="path25" />
+          <path
+             class="st0"
+             fill="#ff0763"
+             data-type="polygon"
+             d="m 225.01,100.77 33.89,18.76 14.3,40.33 41.42,-82.97 z"
+             data-uid="o_fbgn7nicj_13"
+             id="path27" />
+          <path
+             class="st0"
+             fill="#ff0763"
+             data-type="polygon"
+             d="m 106.72,156.25 0.97,28.59 31.46,-20.99 -0.97,-28.6 z"
+             data-uid="o_fbgn7nicj_14"
+             id="path29" />
+          <path
+             class="st0"
+             fill="#ff0763"
+             data-type="polygon"
+             d="m 139.15,163.84 0.58,16.83 18.52,-12.36 -0.57,-16.83 z"
+             data-uid="o_fbgn7nicj_15"
+             id="path31" />
+          <path
+             class="st0"
+             fill="#ff0763"
+             data-type="polygon"
+             d="m 157.11,134.65 0.57,16.83 18.52,-12.36 -0.57,-16.84 z"
+             data-uid="o_fbgn7nicj_16"
+             id="path33" />
+        </g>
+      </svg>
+    </g>
+  </g>
+</svg>
