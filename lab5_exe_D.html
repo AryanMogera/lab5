@@ -1,0 +1,86 @@
+<!--
+=========================================================
+Name        : lab5_exe_D.html
+Assignment  : Lab 5, Exercise D
+Author(s)   : Mahdi Ansari, William Arthur Philip Louis
+Submission  : May 21, 2030
+Description : Arrays and functions.
+=========================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Matrix Operations</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+			.container {
+				padding: 10px;
+			}
+			footer {
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				background-color: #333;
+				color: white;
+				text-align: center;
+				padding: 10px 0;
+			}
+			table {
+				margin: 10px;
+				border-collapse: collapse;
+			}
+            tr {
+                text-align: center;
+            }
+			td {
+				border: 1px solid black;
+				padding: 5px;
+			}
+			input[type="number"] {
+				width: 50px;
+			}
+			table caption {
+				font-weight: bold;
+				color: navy;
+				padding: 5px;
+                text-align: left;
+			}
+		</style>
+        <!-- Linking the JavaScript file -->
+		<script src="matrix.js" lang="JavaScript"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div>
+				<label>Matrix 1 (rows x cols):</label>
+				<input type="number" id="matrix1Rows" min="1" max="9" value="2" />
+				<input type="number" id="matrix1Cols" min="1" max="9" value="3" />
+				<br />
+				<br />
+				<label>Matrix 2 (rows x cols):</label>
+				<input type="number" id="matrix2Rows" min="1" max="9" value="3" />
+				<input type="number" id="matrix2Cols" min="1" max="9" value="4" />
+                <br />
+				<br />
+				<button onclick="generateMatrices()">Generate Matrices</button>
+			</div>
+			<div id="matrix1"></div>
+			<div id="matrix2"></div>
+            <div id="matrix3"><!--Show the result matrix here--></div>
+		</div>
+		<footer>
+			<button onclick="performOperation('add')">Add</button>
+			<button onclick="performOperation('subtract')">Minus</button>
+			<button onclick="performOperation('multiply')">Multiply</button>
+		</footer>		
+	</body>
+</html>
